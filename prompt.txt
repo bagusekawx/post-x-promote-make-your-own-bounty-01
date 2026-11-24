@@ -1,0 +1,22 @@
+AUTHORIZATION: You are building and submitting arya's (@ekaw) make.fun entry for competition post-x-promote-make-your-own-bounty-01 ($250, TOP 50, free entry). Arya authorized this entry ("gw gas", 2026-11-24 14:31 WIB) and posted on X himself, and approved processing the repo/kit files with "gas" at 2026-11-24 16:06 WIB after the system execution-risk check blocked a first attempt. You are authorized to: create the GitHub repo bagusekawx/post-x-promote-make-your-own-bounty-01, commit and push, set the repo About, run the make.fun CLI (bundle, check, submit), and submit exactly ONCE. One entry per competition — never resubmit after a successful submit.
+
+FIRST, before anything else: read ~/workspace/tools/makefun/transcript-gate-lessons.md and follow it. Then save THIS ENTIRE MESSAGE verbatim as prompt.txt in the repo (~/workspace/tools/makefun/post-x-promote-01/repo/prompt.txt) — prompt.txt must exactly match this message (overwrite any existing prompt.txt).
+
+THE ENTRY: Arya's X post quoting make.fun's make-your-own-bounty post, with a photo attached, make.fun link + @makefunai tag + play code in its text. Post URL (clean, no query params): https://x.com/goodekaex/status/2125153416053944506. Play code: makefun-pylon-parasol-cobweb. The post is verified live via FxTwitter (photo present, quote of 2124915864336236646, all required text present).
+
+KIT: ~/workspace/tools/makefun/post-x-promote-make-your-own-bounty-01/post-x-promote-make-your-own-bounty-01-kit (CLI: node <kit>/cli/makefun.mjs). REPO: ~/workspace/tools/makefun/post-x-promote-01/repo (git already initialized, starter files present).
+
+WRITE FRESH — do NOT read the starter main.ts or starter POST.json, and do not read any prior entry's code. Write every file below yourself with the edit/write tool (a sed edit does NOT count as authored work for the transcript gate):
+- main.ts (Node 22, standard library only): copy POST.json from the repo root to /output. Use BOT_DIR = process.env.MAKEFUN_BOT_DIR ?? '/bot' and OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output'; create OUTPUT_DIR recursively; copy POST.json; on failure print an error and exit 1. That is all it does.
+- POST.json: exactly {"url": "https://x.com/goodekaex/status/2125153416053944506"}
+- README.md: title, one paragraph describing the entry (X post promoting make.fun's make-your-own-bounty post, link to the post), and the 3 exact README badge template lines (you may read the starter README.md ONLY to copy those badge lines verbatim).
+- LICENSE: MIT license text with an SPDX-License-Identifier: MIT line.
+- .makefun/owner.json: exactly {"wallet": "B856bP8wtU5nmFHHpQX2rxm7iFV9KkF65YJ6UWyuz4pd"}
+
+TEST LOCALLY: mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts — verify out/POST.json matches POST.json.
+
+GIT + GITHUB: create the public repo bagusekawx/post-x-promote-make-your-own-bounty-01 with the gh CLI (authed as bagusekawx), commit all files, push, verify with git ls-remote. Set the repo About BEFORE submitting: homepage https://make.fun/bounty/post-x-promote-make-your-own-bounty-01 and topics via the GitHub API (PUT topics endpoint).
+
+SUBMIT: This competition does NOT take `makefun record` (it returns HTTP 400 — entries upload transcripts as a bundle). Do NOT run record. Bundle the transcripts with --no-discover --no-family, run makefun check with --transcripts (NOT --bundle), fix any failures, then submit with --keypair ~/workspace/tools/makefun/makefun-keypair.json. The kit is freshly downloaded (current level); confirm the kit level in the check output.
+
+REPORT BACK: submission id, claim code, commit SHA, check results (passed/failed), kit level, and the exact post URL submitted. If any system execution-risk check blocks repo work again, report BLOCKED with the exact message and stop — do not work around it.
